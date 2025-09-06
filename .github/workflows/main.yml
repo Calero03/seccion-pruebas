@@ -1,0 +1,25 @@
+name: Despliegue Web App Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Obtener código
+      uses: actions/checkout@v3
+
+    - name: Instalar dependencias
+      run: |
+        echo "Aquí iría la instalación de paquetes si aplica"
+
+    - name: Desplegar a Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: webapp-lab-iniciales
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: .
