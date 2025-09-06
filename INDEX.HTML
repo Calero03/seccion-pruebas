@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panadería Deliciosa</title>
+    <link rel="stylesheet" href="diseso.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cabecera -->
+      <header class="header">
+        <h1>Panadería Deliciosa</h1>
+        <p>El sabor artesanal directo a tu mesa</p>
+        <nav>
+          <button class="nav-button" onclick="cambiarVentana('ventanaInicio')">
+            Inicio
+          </button>
+          <button
+            class="nav-button"
+            onclick="cambiarVentana('ventanaProductos')"
+          >
+            Productos
+          </button>
+          <button class="nav-button" onclick="cambiarVentana('ventanaCarrito')">
+            Carrito 🛒
+          </button>
+          <button class="nav-button" onclick="cambiarVentana('ventanaFactura')">
+            Facturación
+          </button>
+          <button
+            class="nav-button"
+            onclick="cambiarVentana('ventanaContacto')"
+          >
+            Contacto
+          </button>
+        </nav>
+      </header>
+
+      <!-- Contenido principal -->
+      <main class="main-content">
+        <!-- Inicio -->
+        <div id="ventanaInicio" class="window active">
+          <h2>Bienvenido a Panadería Deliciosa</h2>
+          <p>
+            Descubre la mejor selección de panes, pasteles y postres frescos del
+            día.
+          </p>
+          <img
+            src="https://via.placeholder.com/900x400.png?text=Panadería+Deliciosa"
+            class="hero-image"
+            alt="Panadería"
+          />
+        </div>
+
+        <!-- Productos -->
+        <div id="ventanaProductos" class="window">
+          <h2>Nuestros Productos</h2>
+          <div class="products" id="productosLista"></div>
+        </div>
+
+        <!-- Carrito -->
+        <div id="ventanaCarrito" class="window">
+          <h2>Carrito de Compras</h2>
+          <ul id="carritoLista"></ul>
+          <p id="totalCarrito"><b>Total:</b> $0.00</p>
+          <button class="button" onclick="vaciarCarrito()">
+            Vaciar Carrito
+          </button>
+        </div>
+
+        <!-- Ventana Facturación -->
+        <div id="ventanaFactura" class="window">
+          <h2>Facturación</h2>
+          <p>
+            Revisa los productos de tu compra y completa los datos para generar
+            tu factura.
+          </p>
+
+          <ul id="facturaLista"></ul>
+          <p id="totalFactura"><b>Total:</b> $0.00</p>
+
+          <form id="facturaForm">
+            <label for="cliente">Nombre del Cliente:</label>
+            <input type="text" id="cliente" required />
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" required />
+
+            <label for="metodoPago">Método de Pago:</label>
+            <select id="metodoPago" required>
+              <option value="Efectivo">Efectivo</option>
+              <option value="Tarjeta">Tarjeta</option>
+              <option value="Transferencia">Transferencia</option>
+            </select>
+
+            <button type="submit" class="button">Generar Factura</button>
+          </form>
+        </div>
+
+        <!-- Contacto -->
+        <div id="ventanaContacto" class="window">
+          <h2>Contacto</h2>
+          <form id="contactForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required />
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" required />
+            <label for="message">Mensaje:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit" class="button">Enviar</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="java.js"></script>
+  </body>
+</html>
